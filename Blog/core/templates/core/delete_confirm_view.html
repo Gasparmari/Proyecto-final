@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_que_cambia %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+
+    <div class="alert alert-danger" role="alert">
+        Seguro que quieres eliminar la banda {{ object.nombre }}?
+        <input type="submit" value="Eliminar">
+    
+    </div>
+
+</form>
+
+{% endblock contenido_que_cambia %}

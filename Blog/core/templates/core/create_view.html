@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_que_cambia %}
+
+<form method="POST">
+
+    {% csrf_token %}
+
+    {{form.as_p}}
+    <input type="submit" value="Enviar">
+
+</form>
+
+{% endblock contenido_que_cambia %}

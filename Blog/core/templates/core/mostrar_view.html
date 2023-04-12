@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_que_cambia %}
+
+{% comment %} 
+    {% for banda in object_list %} {% endcomment %}
+
+    {% for banda in object_list %}
+    <ul>
+    <div class="card mb-3">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ banda.nombre}}</h5>
+            <h6 class="card-title">id: {{ banda.id}}</h6>
+            <p class="card-text">{{banda.descripcion}}</p>
+            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            <p>
+                <a class="btn btn-primary" href="{% url 'delete_view' banda.id %}" role="button">Eliminar</a>
+                <a class="btn btn-primary" href="{% url 'detail_view' banda.id %}" role="button">Detalle</a>
+                <a class="btn btn-primary" href="{% url 'update_view' banda.id %}" role="button">Editar</a>
+            </p>
+
+        </div>
+    </div>
+    </ul>
+    {% endfor %}  
+{% endblock contenido_que_cambia %}
