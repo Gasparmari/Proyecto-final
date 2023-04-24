@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block contenido_que_cambia %}
+
+<body>
+    <form action="" method="POST">
+
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        <button  class="btn btn-outline-success"  type="submit"> Registrarse</button>
+        <button><a href='login'>Ya tengo usario</a></button>
+    </form>
+</body>
+
+
+{% endblock contenido_que_cambia %}

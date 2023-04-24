@@ -2,6 +2,8 @@
 
 {% block contenido_que_cambia %}
 
-hola
+{% if request.user.is_authenticated %}
 
+    <button><a href="{% url 'logout' %}"> salir</a></button>
+{% endif %}
 {% endblock contenido_que_cambia %}

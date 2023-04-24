@@ -1,11 +1,11 @@
 {% extends 'core/base.html' %}
 
 {% block contenido_que_cambia %}
-
+{% load static %}
 {% comment %} 
     {% for banda in object_list %} {% endcomment %}
 
-    {% for banda in object_list %}
+    {% comment %} {% for banda in object_list %}
     <ul>
     <div class="card mb-3">
         <img src="..." class="card-img-top" alt="...">
@@ -22,6 +22,33 @@
 
         </div>
     </div>
+    </ul> {% endcomment %}
+
+    {% for banda in object_list %}
+    <ul>
+<div class="card-group">
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{ banda.nombre}}</h5>
+            <p class="card-text">{{ banda.subtitulo}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ banda.id}}</li>
+            <li class="list-group-item">{{ banda.origen}}</li>
+            <li class="list-group-item">{{ banda.integrantes}}</li>
+        </ul>
+        <div class="card-body">
+            <a href="#" class="card-link">Ver mas</a>
+            <p>
+                <a class="btn btn-primary" href="{% url 'delete_view' banda.id %}" role="button">Eliminar</a>
+                <a class="btn btn-primary" href="{% url 'detail_view' banda.id %}" role="button">Detalle</a>
+                <a class="btn btn-primary" href="{% url 'update_view' banda.id %}" role="button">Editar</a>
+            </p>
+        </div>
+    </div>
+</div>
     </ul>
+
     {% endfor %}  
 {% endblock contenido_que_cambia %}

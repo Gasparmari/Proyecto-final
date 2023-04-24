@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -30,9 +31,7 @@
                     <li class="nav-item">
                     <a class="nav-link" href="#">canciones</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                    </li>
+                    <a class="btn btn-primary" href="{% url 'login' %}"role="button">iniciar</a>
                     <li class="nav-item">
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                     </li>
